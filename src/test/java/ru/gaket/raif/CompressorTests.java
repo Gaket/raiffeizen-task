@@ -3,7 +3,7 @@ package ru.gaket.raif;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CompressorTests {
+public abstract class CompressorTests {
 
   protected Compressor sut;
 
@@ -63,4 +63,10 @@ public class CompressorTests {
     Assert.assertEquals(expected, actual);
   }
 
+  @Test
+  public void compressPhrase() {
+    String expected = "3s4o c3ol b3ep bop";
+    String actual = sut.compress("sssoooo coool beeep bop");
+    Assert.assertEquals(expected, actual);
+  }
 }
